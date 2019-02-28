@@ -82,4 +82,3 @@ server>`.
 ## Footnotes:
 
 <a name='barman_docs'><sup>1</sup></a>: [Barman Documentation](http://docs.pgbarman.org/release/2.1/)
-# docker-barman

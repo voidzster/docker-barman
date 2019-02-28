@@ -1,0 +1,10 @@
+* * * * * barman /usr/local/bin/barman -q cron
+@daily root /usr/sbin/logrotate /etc/logrotate.conf
+
+#каждую минуту выполняем операцию обслуживания WAL файлов и бэкапов - логи лежат в barman_log
+#* * * * * barman /usr/local/bin/barman cron >>/var/log/barman/cron.log 2>&1
+
+#делаем бэкап всех зарегистрированых слотов бармана - скрипты лежат в barman_data
+0 0 * * 6 barman /home/barman/backup_all.sh
+
+

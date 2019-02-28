@@ -1,0 +1,27 @@
+version: '2' 
+services:
+ barman:
+   image: tbeadle/barman:2.1
+   volumes:
+     - ./barman_config/barman.d:/etc/barman.d/
+     - ./barman_config/barman.conf:/etc/barman.conf
+#     - ./barman_crontabs:/var/spool/cron/crontabs
+     - ./barman_crontab:/etc/crontab
+#     - ./barman_cron.d:/etc/cron.d
+     - ./barman_data:/var/lib/barman
+     - ./barman_logs:/var/log/barman
+     - ./barman_private:/home/barman
+     - /etc/localtime:/etc/localtime:ro
+#   environment:
+#    - BARMAN_CRON_SCHEDULE:* * * * *
+#    - BARMAN_BACKUP_SCHEDULE:0 1 * * *
+#    - BARMAN_LOG_LEVEL:INFO
+#    - DB_HOST:192.168.0.14
+#    - DB_PORT:5432
+#    - DB_SUPERUSER:postgres
+#    - DB_SUPERUSER_PASSWORD:123qweRTY
+#    - DB_SUPERUSER_DATABASE:postgres
+#    - DB_REPLICATION_USER:streaming_barman
+#    - DB_REPLICATION_PASSWORD:Ab123456
+#    - DB_SLOT_NAME:barman
+#    - DB_BACKUP_METHOD:postgres
