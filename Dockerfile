@@ -44,5 +44,7 @@ COPY install_barman.sh /tmp/
 RUN /tmp/install_barman.sh && rm /tmp/install_barman.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-COPY entrypoint.sh /usr/bin
+CMD ["cron", "-L", "0",  "-f"]
+COPY entrypoint.sh /
+COPY update_secure_files /usr/bin/
 WORKDIR ${BARMAN_DATA_DIR}
