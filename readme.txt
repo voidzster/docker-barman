@@ -1,4 +1,4 @@
 при первом запуске контейнера сделать принудительное копирование логов с зарегестрированых серверов (слотов) в бармане.
-barman switch-xlog --force --archive ubuntuserver-pg
+barman switch-xlog --force --archive barman-slot-name
 
 чтобы работал крон - права на файлы ./barman_cron.d/* 0644 root root

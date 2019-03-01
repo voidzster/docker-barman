@@ -1,0 +1,12 @@
+version: '2' 
+services:
+ barman:
+   image: voidzster/barman
+   volumes:
+     - ./barman_config/barman.d:/etc/barman.d/
+     - ./barman_config/barman.conf:/etc/barman.conf
+     - ./barman_cron.d:/etc/cron.d
+     - ./barman_data:/var/lib/barman
+     - ./barman_logs:/var/log/barman
+     - ./barman_private:/home/barman
+     - /etc/localtime:/etc/localtime:ro
