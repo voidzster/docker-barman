@@ -2,3 +2,5 @@
 barman switch-xlog --force --archive barman-slot-name
 
 чтобы работал крон - права на файлы ./barman_cron.d/* 0644 root root
+
+при восстановлении с timestamp’ом, сильно отличным от текущего — на сервере pg выполнить SELECT pg_xlog_replay_resume();
