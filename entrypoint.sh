@@ -7,7 +7,6 @@ install -d -m 0700 -o barman -g barman ${BARMAN_DATA_DIR}
 install -d -m 0755 -o barman -g barman ${BARMAN_LOG_DIR}
 
 pip install psycopg2-binary
-
 #/usr/bin/update_secure_files
 
 exec "$@"
