@@ -29,13 +29,14 @@ RUN bash -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main
 		postgresql-client-9.4 \
 		postgresql-client-9.5 \
 		postgresql-client-9.6 \
+		postgresql-client-11 \
 		python \
 		rsync \
-	&& rm -rf /var/lib/apt/lists/* 
+		&& rm -rf /var/lib/apt/lists/* 
 
 # Set up some defaults for file/directory locations used in entrypoint.sh.
 ENV \
-	BARMAN_VERSION=2.1 \
+	BARMAN_VERSION=2.5 \
 	BARMAN_DATA_DIR=/var/lib/barman \
 	BARMAN_LOG_DIR=/var/log/barman 
 VOLUME /var/log/barman
