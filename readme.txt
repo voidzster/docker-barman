@@ -5,4 +5,4 @@ barman switch-xlog --force --archive barman-slot-name
 Чтобы barman подключался к слоту репликации - права на .pgpass в контейнере chmod 400 / chown barman:barman
 
 при восстановлении с timestamp’ом, сильно отличным от текущего — на сервере pg выполнить SELECT pg_xlog_replay_resume();
-
+---------------
